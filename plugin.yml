@@ -1,13 +1,11 @@
 name: Sethome
 version: Stable
-api:
-- 3.0.6
-- 4.0.0
+api: [3.9.0]
 author: AlicanCopur
 main: AlicanCopur\SetHome\Main
 
 commands:
   sethome:
-    description: Ev belirle
+    description: Set your home
   home:
-    description: Evine git
+    description: Go to your home
