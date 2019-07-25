@@ -4,8 +4,21 @@ declare(strict_types=1);
 
 namespace AlicanCopur\SetHome;
 
-// Alican Çopur, 2018 © Tüm hakları saklı falan değildir.
-// İzinsiz dağıtılması yasaktır.
+/** 
+*     _    _ _                  ____ 
+*    / \  | (_) ___ __ _ _ __  / ___|
+*   / _ \ | | |/ __/ _` | '_ \| |    
+*  / ___ \| | | (_| (_| | | | | |___ 
+* /_/   \_\_|_|\___\__,_|_| |_|\____|
+*                                 
+*                                  
+*  -I'm getting stronger if I'm not dying-
+*
+* @version 1.0
+* @author AlicanCopur
+* @copyright HashCube Network © | 2015 - 2019
+* @license Açık yazılım lisansı altındadır. Tüm hakları saklıdır. 
+*/                                   
 
 use pocketmine\Server;
 use pocketmine\Player;
@@ -54,14 +67,14 @@ class Main extends PluginBase implements Listener {
 			$cfg->set("Y", $y);
 			$cfg->set("Z", $z);
 			$cfg->set("Dunya", $dunya);
-			$oyuncu->sendMessage("§7» §aEvin X: $x Y: $y Z: $z kordinatlarına belirlendi!");
+			$oyuncu->sendMessage("§7» §aYour home setted to X: $x Y: $y Z: $z !");
 			$cfg->save();
 		}
 		if($cmd->getName() == "home"){
 			$ac = new Config($this->getDataFolder().$isim.".yml", Config::YAML);
 			$ev = $ac->get("Ev");
 			if($ev == "Yok"){
-				$oyuncu->sendMessage("§7» §cEv belirlememişsiniz!");
+				$oyuncu->sendMessage("§7» §cYou didn't create a home!");
 			} else {
 				$oyuncu->teleport(new Position($ac->get("X"), $ac->get("Y"), $ac->get("Z"), $this->getServer()->getLevelByName($ac->get("Dunya"))));
 			}
